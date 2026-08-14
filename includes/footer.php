@@ -24,9 +24,7 @@
             <div class="footer-links">
                 <h4>Technical Info</h4>
                 <ul>
-                    <li><a href="documentation.php">Media Documentation</a></li>
-                    <li><a href="documentation.php#accessibility">Accessibility Report</a></li>
-                    <li><a href="documentation.php#validation">HTML/CSS Validation</a></li>
+                    <li><a href="Technical_Documentation.docx" download>Documentation (.docx)</a></li>
                 </ul>
             </div>
         </div>

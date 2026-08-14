@@ -52,7 +52,6 @@ if (!isset($active_page)) {
                     <li><a href="gallery.php" class="nav-link <?php echo ($active_page === 'gallery') ? 'active' : ''; ?>">Media Gallery</a></li>
                     <li><a href="upload.php" class="nav-link <?php echo ($active_page === 'upload') ? 'active' : ''; ?>">Upload Media</a></li>
                     <li><a href="contact.php" class="nav-link <?php echo ($active_page === 'contact') ? 'active' : ''; ?>">Contact & Credits</a></li>
-                    <li><a href="documentation.php" class="nav-link <?php echo ($active_page === 'documentation') ? 'active' : ''; ?>">Documentation</a></li>
                 </ul>
             </nav>
         </div>
