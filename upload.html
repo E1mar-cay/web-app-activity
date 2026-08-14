@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Savoria Filipina - Upload recipe photos, audio cooking notes, and video demonstrations.">
+    <title>Upload Recipe & Media | Savoria Filipina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header" role="banner">
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Savoria Filipina Home Page">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                </svg>
+                <span>Savoria Filipina</span>
+            </a>
+
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="primaryNav">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <nav id="primaryNav" aria-label="Primary Navigation">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="gallery.html" class="nav-link">Media Gallery</a></li>
+                    <li><a href="upload.html" class="nav-link active">Upload Media</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact & Credits</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="section" aria-labelledby="upload-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h1 id="upload-heading">Upload Recipe & Media</h1>
+                    <p>Share your own photos of Filipino dishes, audio notes, or cooking demonstrations on Savoria Filipina.</p>
+                </div>
+
+                <div class="upload-card">
+                    <div id="statusAlert" style="display: none;" class="alert" role="alert"></div>
+
+                    <form action="api/upload_handler.php" method="POST" enctype="multipart/form-data" id="uploadForm">
+                        <div class="form-group">
+                            <label for="mediaTitle" class="form-label">Dish / Media Title: *</label>
+                            <input type="text" id="mediaTitle" name="mediaTitle" class="form-control" placeholder="e.g. Grandma's Special Pork Menudo" required aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mediaDescription" class="form-label">Food Description / Cooking Notes:</label>
+                            <textarea id="mediaDescription" name="mediaDescription" class="form-control" rows="3" placeholder="Write ingredients, flavors, or cooking notes for this recipe..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mediaFile" class="form-label">Select Media File: *</label>
+                            <div class="file-dropzone" id="dropzone">
+                                <svg class="dropzone-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+                                </svg>
+                                <p style="font-weight: 600; font-size: 1.1rem; color: var(--secondary);" id="selectedFileName">Click or Drag Media File Here</p>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Supported Formats: JPEG, WebP, PNG, SVG, MP3, OGG, WAV, MP4, WebM (Max size: 25 MB)</p>
+                                <input type="file" id="mediaFile" name="mediaFile" accept="image/*,audio/*,video/*" required aria-required="true">
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <button type="submit" class="btn btn-primary" id="submitBtn" style="width: 100%; max-width: 320px;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z"/>
+                                </svg>
+                                Upload Media File
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--primary-light);">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                    <span style="color: #ffffff;">Savoria Filipina</span>
+                </div>
+                <p style="margin-top: 1rem; color: #a0aec0; font-size: 0.9rem;">
+                    Discover authentic Filipino recipes with step-by-step video masterclasses, audio guides, and media gallery management.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Media Gallery</a></li>
+                    <li><a href="upload.html">Upload Media</a></li>
+                    <li><a href="contact.html">Contact & Credits</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Technical Info</h4>
+                <ul>
+                    <li><a href="Technical_Documentation.docx" download>Documentation (.docx)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Savoria Food & Recipe Hub. Developed for IT AppDev 2 – Web Applications Activity.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const fileInput = document.getElementById('mediaFile');
+        const fileNameDisplay = document.getElementById('selectedFileName');
+        if (fileInput && fileNameDisplay) {
+            fileInput.addEventListener('change', () => {
+                if (fileInput.files.length > 0) {
+                    fileNameDisplay.innerHTML = '📁 Selected File: <strong>' + fileInput.files[0].name + '</strong>';
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Savoria Filipina - Explore authentic Filipino recipes like Adobo, Sinigang, and Halo-Halo with step-by-step video masterclasses, audio cooking guides, and responsive media gallery.">
+    <meta name="author" content="IT AppDev 2 Student Project">
+    <title>Savoria Filipina | Authentic Filipino Recipes</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header Navigation -->
+    <header class="header" role="banner">
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Savoria Filipina Home Page">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                </svg>
+                <span>Savoria Filipina</span>
+            </a>
+
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="primaryNav">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <nav id="primaryNav" aria-label="Primary Navigation">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="gallery.html" class="nav-link">Media Gallery</a></li>
+                    <li><a href="upload.html" class="nav-link">Upload Media</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact & Credits</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+
+<!-- Hero Section with Responsive Media Element -->
+<section class="hero" aria-label="Hero Section">
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <span class="badge">Home Cooking & Culinary Heritage</span>
+            <h1>Savor the Flavor of Authentic Filipino Recipes</h1>
+            <p>Welcome to <strong>Savoria Filipina</strong> — your ultimate culinary hub for authentic Filipino dishes. Discover timeless recipes like Chicken Pork Adobo, Sinigang na Baboy, and Halo-Halo through interactive media, upload forms, and complete media gallery management.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="#recipes" class="btn btn-primary">Discover Recipes</a>
+                <a href="upload.html" class="btn btn-secondary">Upload Media</a>
+            </div>
+        </div>
+
+        <!-- Responsive Media Element using <picture> Tag -->
+        <div class="hero-media-wrapper">
+            <picture>
+                <source media="(max-width: 600px)" srcset="images/savoria-hero-mobile.jpg">
+                <source media="(max-width: 1200px)" srcset="images/savoria-hero-tablet.jpg">
+                <img src="images/savoria-hero-desktop.jpg" alt="Filipino food feast table featuring Adobo, Sinigang, and fresh rice served on banana leaves" width="600" height="400">
+            </picture>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Recipe Showcase -->
+<section class="section" id="recipes" style="background-color: var(--bg-light);" aria-labelledby="featured-recipes-heading">
+    <div class="container">
+        <div class="section-header">
+            <h2 id="featured-recipes-heading">National Favorites (Featured Filipino Dishes)</h2>
+            <p>Try our tried-and-tested recipe favorites for the whole family.</p>
+        </div>
+
+        <div class="recipe-grid">
+            <!-- Recipe Card 1: Adobo -->
+            <article class="recipe-card">
+                <img src="images/filipino-adobo.jpg" alt="Authentic Filipino Chicken and Pork Adobo garnished with garlic chips and bay leaves in a brown savory sauce" class="recipe-card-img" loading="lazy" width="400" height="220">
+                <div class="recipe-card-body">
+                    <span class="badge" style="align-self: flex-start;">National Dish</span>
+                    <h3 class="recipe-card-title">Classic Chicken & Pork Adobo</h3>
+                    <p class="recipe-card-desc">The quintessential Filipino family adobo. Marinated in soy sauce, vinegar, garlic, and bay leaves.</p>
+                    <a href="gallery.html" class="btn btn-secondary" style="margin-top: auto;">View in Gallery &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Recipe Card 2: Sinigang -->
+            <article class="recipe-card">
+                <img src="images/sinigang-baboy.jpg" alt="Traditional Filipino Sinigang na Baboy tamarind soup with kangkong water spinach, radish, and tomatoes" class="recipe-card-img" loading="lazy" width="400" height="220">
+                <div class="recipe-card-body">
+                    <span class="badge" style="align-self: flex-start;">Savory Soup</span>
+                    <h3 class="recipe-card-title">Tamarind Pork Sinigang (Sinigang na Baboy)</h3>
+                    <p class="recipe-card-desc">Warm and sour pork belly soup with fresh water spinach, radish, tomatoes, and green chili.</p>
+                    <a href="gallery.html" class="btn btn-secondary" style="margin-top: auto;">View in Gallery &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Recipe Card 3: Halo-Halo -->
+            <article class="recipe-card">
+                <img src="images/halo-halo.jpg" alt="Tall glass of colorful Filipino Halo-Halo shaved ice dessert topped with ube halaya ice cream and leche flan" class="recipe-card-img" loading="lazy" width="400" height="220">
+                <div class="recipe-card-body">
+                    <span class="badge" style="align-self: flex-start;">Dessert</span>
+                    <h3 class="recipe-card-title">Special Filipino Halo-Halo</h3>
+                    <p class="recipe-card-desc">Delicious shaved ice topped with purple yam (ube halaya), leche flan, sweet banana, macapuno, and toasted rice.</p>
+                    <a href="gallery.html" class="btn btn-secondary" style="margin-top: auto;">View in Gallery &rarr;</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Dynamic User Uploaded Media Container -->
+<section class="section" id="userMediaSection" style="background-color: #ffffff; display: none;" aria-labelledby="community-media-heading">
+    <div class="container">
+        <div class="section-header">
+            <h2 id="community-media-heading">User Uploaded Recipes & Media</h2>
+            <p>View recently uploaded photos, titles, and descriptions submitted by users.</p>
+        </div>
+        <div class="recipe-grid" id="userMediaGrid"></div>
+    </div>
+</section>
+
+<!-- Call to Action for Media Management -->
+<section class="section" style="background-color: var(--primary-light);">
+    <div class="container" style="text-align: center; max-width: 800px;">
+        <h2 style="color: var(--primary);">Upload & Manage Your Own Media</h2>
+        <p style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 2rem;">
+            You can upload your own photos of Filipino dishes, write titles and descriptions, and manage them in the Media Gallery!
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="upload.html" class="btn btn-primary">Go to Upload Page &rarr;</a>
+            <a href="gallery.html" class="btn btn-secondary">Open Media Gallery &rarr;</a>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--primary-light);">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                    <span style="color: #ffffff;">Savoria Filipina</span>
+                </div>
+                <p style="margin-top: 1rem; color: #a0aec0; font-size: 0.9rem;">
+                    Discover authentic Filipino recipes with step-by-step video masterclasses, audio guides, and media gallery management.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Media Gallery</a></li>
+                    <li><a href="upload.html">Upload Media</a></li>
+                    <li><a href="contact.html">Contact & Credits</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Technical Info</h4>
+                <ul>
+                    <li><a href="Technical_Documentation.docx" download>Documentation (.docx)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Savoria Food & Recipe Hub. Developed for IT AppDev 2 – Web Applications Activity.</p>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

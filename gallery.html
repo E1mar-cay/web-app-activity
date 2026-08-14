@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Savoria Filipina Media Gallery - Browse images, audio recipe guides, and video masterclasses with management features.">
+    <title>Media Gallery & Management | Savoria Filipina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header" role="banner">
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Savoria Filipina Home Page">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                </svg>
+                <span>Savoria Filipina</span>
+            </a>
+
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="primaryNav">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <nav id="primaryNav" aria-label="Primary Navigation">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="gallery.html" class="nav-link active">Media Gallery</a></li>
+                    <li><a href="upload.html" class="nav-link">Upload Media</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact & Credits</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="section" aria-labelledby="gallery-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h1 id="gallery-heading">Media Gallery & Management</h1>
+                    <p>View our media collection, edit titles and descriptions, and manage or delete media files.</p>
+                </div>
+
+                <div class="gallery-filter" role="tablist" aria-label="Media Filters">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" id="filterAllBtn">All Media</button>
+                    <button class="filter-btn" data-filter="image" role="tab" aria-selected="false">Images</button>
+                    <button class="filter-btn" data-filter="audio" role="tab" aria-selected="false">Audio</button>
+                    <button class="filter-btn" data-filter="video" role="tab" aria-selected="false">Videos</button>
+                </div>
+
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Default System Images -->
+                    <article class="gallery-card" data-category="image">
+                        <div class="gallery-media-preview">
+                            <span class="type-tag">IMAGE</span>
+                            <img src="images/filipino-adobo.jpg" alt="Chicken & Pork Adobo" loading="lazy">
+                        </div>
+                        <div class="gallery-card-footer" style="flex-direction: column; align-items: flex-start; gap: 0.75rem;">
+                            <div style="width: 100%;">
+                                <h4 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 0.25rem;">Classic Chicken & Pork Adobo</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Traditional savory marinated pork and chicken adobo.</p>
+                                <small style="font-size: 0.75rem; color: var(--text-muted); display: block;">📁 File: <code>filipino-adobo.jpg</code></small>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Filipino Dish Media</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card" data-category="image">
+                        <div class="gallery-media-preview">
+                            <span class="type-tag">IMAGE</span>
+                            <img src="images/sinigang-baboy.jpg" alt="Tamarind Pork Sinigang" loading="lazy">
+                        </div>
+                        <div class="gallery-card-footer" style="flex-direction: column; align-items: flex-start; gap: 0.75rem;">
+                            <div style="width: 100%;">
+                                <h4 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 0.25rem;">Tamarind Pork Sinigang</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Classic sour pork belly soup with vegetables.</p>
+                                <small style="font-size: 0.75rem; color: var(--text-muted); display: block;">📁 File: <code>sinigang-baboy.jpg</code></small>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Filipino Dish Media</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card" data-category="image">
+                        <div class="gallery-media-preview">
+                            <span class="type-tag">IMAGE</span>
+                            <img src="images/halo-halo.jpg" alt="Special Filipino Halo-Halo" loading="lazy">
+                        </div>
+                        <div class="gallery-card-footer" style="flex-direction: column; align-items: flex-start; gap: 0.75rem;">
+                            <div style="width: 100%;">
+                                <h4 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 0.25rem;">Special Filipino Halo-Halo</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Shaved ice dessert with ube halaya and leche flan.</p>
+                                <small style="font-size: 0.75rem; color: var(--text-muted); display: block;">📁 File: <code>halo-halo.jpg</code></small>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Filipino Dish Media</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--primary-light);">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                    <span style="color: #ffffff;">Savoria Filipina</span>
+                </div>
+                <p style="margin-top: 1rem; color: #a0aec0; font-size: 0.9rem;">
+                    Discover authentic Filipino recipes with step-by-step video masterclasses, audio guides, and media gallery management.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Media Gallery</a></li>
+                    <li><a href="upload.html">Upload Media</a></li>
+                    <li><a href="contact.html">Contact & Credits</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Technical Info</h4>
+                <ul>
+                    <li><a href="Technical_Documentation.docx" download>Documentation (.docx)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Savoria Food & Recipe Hub. Developed for IT AppDev 2 – Web Applications Activity.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.gallery-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+
+                const filter = btn.getAttribute('data-filter');
+                cards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+    </script>
+</body>
+</html>
