@@ -1,0 +1,61 @@
+<?php
+$page_title = "About Savoria Filipina | Culinary Heritage & Media Guidelines";
+$active_page = "about";
+include 'includes/header.php';
+?>
+
+<section class="section" aria-labelledby="about-heading">
+    <div class="container">
+        <div class="section-header">
+            <h1 id="about-heading">Tungkol sa Savoria Filipina</h1>
+            <p>Ipinagmamalaki ang sarap at kulay ng lutong bahay na Pilipino sa pamamagitan ng modernong web media.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: flex-start; margin-bottom: 4rem;">
+            <div style="background: var(--bg-card); padding: 1.5rem; border-radius: var(--border-radius); border: 1px solid var(--border-color); text-align: center; box-shadow: var(--shadow-sm);">
+                <img src="images/chef-avatar.jpg" alt="Chef Maria Santos, Head Culinary Specialist of Savoria Filipina" style="width: 100%; height: 260px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                <h3 style="margin-bottom: 0.25rem;">Chef Maria Santos</h3>
+                <p style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Filipino Culinary Specialist</p>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">"Ang pagluluto ng pagkaing Pilipino ay pagpapakita ng pagmamahal sa pamilya at kultura."</p>
+            </div>
+
+            <div>
+                <h2>Aming Layunin (Our Mission)</h2>
+                <p style="margin-bottom: 1.25rem; color: var(--text-muted); font-size: 1.05rem;">
+                    Ang <strong>Savoria Filipina</strong> ay binuo upang magbigay ng interactive at masayang karanasan sa pag-aaral ng mga otentikong resapeng Pilipino. Sa pamamagitan ng pagsasama-sama ng malilinaw na larawan, video masterclasses na may subtitles, at audio guides, madaling matututunan ng sinoman ang pagluluto ng Adobo, Sinigang, at iba pang paboritong ulam.
+                </p>
+                <p style="margin-bottom: 1.75rem; color: var(--text-muted); font-size: 1.05rem;">
+                    Every media asset is optimized for all screen sizes (Smartphones, Tablets, and Desktops) adhering strictly to accessibility standards (WCAG) and server-side file management practices.
+                </p>
+
+                <h2>Target Readers & Users</h2>
+                <ul style="margin-left: 1.5rem; margin-bottom: 2rem; color: var(--text-muted); line-height: 1.8;">
+                    <li><strong>Students & Beginners:</strong> Learning classic Filipino dishes like Adobo and Sinigang with step-by-step videos.</li>
+                    <li><strong>Filipino Families & OFWs:</strong> Reconnecting with home-cooked meals through audio guides and clear visual media.</li>
+                    <li><strong>Food Enthusiasts:</strong> Uploading and sharing their own Filipino recipe photos and cooking clips.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Media Usage Philosophy -->
+        <div style="background-color: var(--primary-light); border-radius: var(--border-radius); padding: 2.5rem; border: 1px solid rgba(200,90,50,0.2);">
+            <h2 style="color: var(--primary);">Media Content Integration Standards</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div style="background: #ffffff; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 1.1rem; color: var(--secondary);">High-Quality Responsive Images</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">WebP and JPEG formats with responsive <code>&lt;picture&gt;</code> element delivery for mobile efficiency.</p>
+                </div>
+                <div style="background: #ffffff; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 1.1rem; color: var(--secondary);">Audio Guides & Transcripts</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Hands-free audio instructions with Tagalog/English text transcript toggles.</p>
+                </div>
+                <div style="background: #ffffff; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 1.1rem; color: var(--secondary);">Caption-Supported Video</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">HTML5 Video element featuring WebVTT subtitles for accessible learning.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php include 'includes/footer.php'; ?>

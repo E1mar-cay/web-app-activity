@@ -1,0 +1,92 @@
+[
+    {
+        "id": "1786688048_415",
+        "filename": "1786688048_filipino-adobo.jpg",
+        "original_name": "filipino-adobo.jpg",
+        "title": "Special Pork Menudo ni Lola",
+        "description": "Masarap na menudo na may pork belly, atay, kalabasa, patatas, at raisins sa kamatis sauce.",
+        "category": "image",
+        "filepath": "uploads\/images\/1786688048_filipino-adobo.jpg",
+        "upload_date": "2026-08-14 08:14:08"
+    },
+    {
+        "id": "1786688097_599",
+        "filename": "1786688097_sinigang-baboy.jpg",
+        "original_name": "sinigang-baboy.jpg",
+        "title": "Sinigang na Hipon sa Sampalok",
+        "description": "Sariwang hipon na may labanos, kangkong, at maasim na sabaw ng sampalok.",
+        "category": "image",
+        "filepath": "uploads\/images\/1786688097_sinigang-baboy.jpg",
+        "upload_date": "2026-08-14 08:14:57"
+    },
+    {
+        "id": "1786688608_887",
+        "filename": "sinigang-baboy.jpg",
+        "original_name": "sinigang-baboy.jpg",
+        "title": "sinigang-baboy",
+        "description": "",
+        "category": "image",
+        "filepath": "images\/sinigang-baboy.jpg",
+        "upload_date": "2026-08-14 08:23:28"
+    },
+    {
+        "id": "1786688619_271",
+        "filename": "chef-avatar.jpg",
+        "original_name": "chef-avatar.jpg",
+        "title": "chef-avatar",
+        "description": "",
+        "category": "image",
+        "filepath": "images\/chef-avatar.jpg",
+        "upload_date": "2026-08-14 08:23:39"
+    },
+    {
+        "id": "1786688627_278",
+        "filename": "filipino-adobo.jpg",
+        "original_name": "filipino-adobo.jpg",
+        "title": "filipino-adobo",
+        "description": "",
+        "category": "image",
+        "filepath": "images\/filipino-adobo.jpg",
+        "upload_date": "2026-08-14 08:23:47"
+    },
+    {
+        "id": "1786688634_520",
+        "filename": "halo-halo.jpg",
+        "original_name": "halo-halo.jpg",
+        "title": "halo-halo",
+        "description": "",
+        "category": "image",
+        "filepath": "images\/halo-halo.jpg",
+        "upload_date": "2026-08-14 08:23:54"
+    },
+    {
+        "id": "1786688641_304",
+        "filename": "savoria-hero-desktop.jpg",
+        "original_name": "savoria-hero-desktop.jpg",
+        "title": "savoria-hero-desktop",
+        "description": "",
+        "category": "image",
+        "filepath": "images\/savoria-hero-desktop.jpg",
+        "upload_date": "2026-08-14 08:24:01"
+    },
+    {
+        "id": "1786688651_621",
+        "filename": "savoria-hero-mobile.jpg",
+        "original_name": "savoria-hero-mobile.jpg",
+        "title": "savoria-hero-mobile",
+        "description": "",
+        "category": "image",
+        "filepath": "images\/savoria-hero-mobile.jpg",
+        "upload_date": "2026-08-14 08:24:11"
+    },
+    {
+        "id": "1786688657_428",
+        "filename": "savoria-hero-tablet.jpg",
+        "original_name": "savoria-hero-tablet.jpg",
+        "title": "savoria-hero-tablet",
+        "description": "",
+        "category": "image",
+        "filepath": "images\/savoria-hero-tablet.jpg",
+        "upload_date": "2026-08-14 08:24:17"
+    }
+]
