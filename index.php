@@ -25,6 +25,34 @@ if (file_exists($json_file)) {
                 <a href="#recipes" class="btn btn-primary">Discover Recipes</a>
                 <a href="upload.php" class="btn btn-secondary">Upload Media</a>
             </div>
+
+            <!-- Background Audio for Home Tab (Kitchen Ambiance Loop) -->
+            <audio id="homeBgAudio" loop preload="auto">
+                <source src="audio/kitchen-ambiance.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <!-- Ambient Background Music Controller Widget -->
+            <div class="ambient-audio-container paused" id="ambientAudioWidget" role="region" aria-label="Kitchen Ambiance Background Music Controls">
+                <button class="ambient-audio-btn" id="ambientAudioToggleBtn" aria-label="Play Kitchen Ambiance background music">
+                    <svg id="ambientAudioPlayIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <svg id="ambientAudioPauseIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                </button>
+                <div class="ambient-audio-info">
+                    <div class="sound-wave-icon" aria-hidden="true">
+                        <span class="sound-wave-bar"></span>
+                        <span class="sound-wave-bar"></span>
+                        <span class="sound-wave-bar"></span>
+                    </div>
+                    <span>Kitchen Ambiance</span>
+                    <span class="ambient-audio-status-badge" id="ambientAudioStatusText">Click to Play</span>
+                </div>
+            </div>
         </div>
 
         <!-- Responsive Media Element using <picture> Tag -->
