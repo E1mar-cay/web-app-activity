@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['filepath']) || empty($_POST['filepath'])) {
         $_SESSION['gallery_status'] = [
             'type' => 'danger',
-            'message' => 'Walang media file na tinukoy para burahin.'
+            'message' => 'No media file specified for deletion.'
         ];
         header('Location: ../gallery.php');
         exit;
@@ -43,19 +43,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $_SESSION['gallery_status'] = [
                     'type' => 'success',
-                    'message' => 'Ang file na "' . htmlspecialchars(basename($filepath)) . '" ay matagumpay na nabura sa server at gallery.'
+                    'message' => 'The file "' . htmlspecialchars(basename($filepath)) . '" was successfully deleted from the server and gallery.'
                 ];
             } else {
                 $_SESSION['gallery_status'] = [
                     'type' => 'danger',
-                    'message' => 'Bumagsak ang pagbura ng file sa disk.'
+                    'message' => 'Failed to delete file from server disk.'
                 ];
             }
         }
     } else {
         $_SESSION['gallery_status'] = [
             'type' => 'danger',
-            'message' => 'Hindi valid ang file path o hindi na umiiral ang file.'
+            'message' => 'Invalid file path or file does not exist.'
         ];
     }
 

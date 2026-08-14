@@ -7,8 +7,8 @@ include 'includes/header.php';
 <section class="section" aria-labelledby="about-heading">
     <div class="container">
         <div class="section-header">
-            <h1 id="about-heading">Tungkol sa Savoria Filipina</h1>
-            <p>Ipinagmamalaki ang sarap at kulay ng lutong bahay na Pilipino sa pamamagitan ng modernong web media.</p>
+            <h1 id="about-heading">About Savoria Filipina</h1>
+            <p>Celebrating the rich flavors and colors of home-cooked Filipino food through modern web media.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: flex-start; margin-bottom: 4rem;">
@@ -16,13 +16,13 @@ include 'includes/header.php';
                 <img src="images/chef-avatar.jpg" alt="Chef Maria Santos, Head Culinary Specialist of Savoria Filipina" style="width: 100%; height: 260px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
                 <h3 style="margin-bottom: 0.25rem;">Chef Maria Santos</h3>
                 <p style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Filipino Culinary Specialist</p>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">"Ang pagluluto ng pagkaing Pilipino ay pagpapakita ng pagmamahal sa pamilya at kultura."</p>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">"Cooking Filipino food is an expression of love for family and culture."</p>
             </div>
 
             <div>
-                <h2>Aming Layunin (Our Mission)</h2>
+                <h2>Our Mission</h2>
                 <p style="margin-bottom: 1.25rem; color: var(--text-muted); font-size: 1.05rem;">
-                    Ang <strong>Savoria Filipina</strong> ay binuo upang magbigay ng interactive at masayang karanasan sa pag-aaral ng mga otentikong resapeng Pilipino. Sa pamamagitan ng pagsasama-sama ng malilinaw na larawan, video masterclasses na may subtitles, at audio guides, madaling matututunan ng sinoman ang pagluluto ng Adobo, Sinigang, at iba pang paboritong ulam.
+                    <strong>Savoria Filipina</strong> was created to provide an interactive and enjoyable learning experience for authentic Filipino recipes. By combining crisp photography, video masterclasses with subtitles, and audio guides, anyone can easily learn to cook Adobo, Sinigang, and other favorite dishes.
                 </p>
                 <p style="margin-bottom: 1.75rem; color: var(--text-muted); font-size: 1.05rem;">
                     Every media asset is optimized for all screen sizes (Smartphones, Tablets, and Desktops) adhering strictly to accessibility standards (WCAG) and server-side file management practices.
@@ -47,7 +47,7 @@ include 'includes/header.php';
                 </div>
                 <div style="background: #ffffff; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
                     <h3 style="font-size: 1.1rem; color: var(--secondary);">Audio Guides & Transcripts</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Hands-free audio instructions with Tagalog/English text transcript toggles.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Hands-free audio instructions with English text transcript toggles.</p>
                 </div>
                 <div style="background: #ffffff; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
                     <h3 style="font-size: 1.1rem; color: var(--secondary);">Caption-Supported Video</h3>

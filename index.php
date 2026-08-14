@@ -1,5 +1,5 @@
 <?php
-$page_title = "Savoria Filipina | Otentikong Resipeng Pilipino";
+$page_title = "Savoria Filipina | Authentic Filipino Recipes";
 $active_page = "home";
 include 'includes/header.php';
 
@@ -18,12 +18,12 @@ if (file_exists($json_file)) {
 <section class="hero" aria-label="Hero Section">
     <div class="container hero-grid">
         <div class="hero-content">
-            <span class="badge">Lutong Bahay & Culinary Heritage</span>
-            <h1>Lasapin ang Sarap ng Otentikong Resipeng Pilipino</h1>
+            <span class="badge">Home Cooking & Culinary Heritage</span>
+            <h1>Savor the Flavor of Authentic Filipino Recipes</h1>
             <p>Welcome to <strong>Savoria Filipina</strong> — your ultimate culinary hub for authentic Filipino dishes. Discover timeless recipes like Chicken Pork Adobo, Sinigang na Baboy, and Halo-Halo through interactive media, upload forms, and complete media gallery management.</p>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="#recipes" class="btn btn-primary">Tuklasin ang Mga Resipi</a>
-                <a href="upload.php" class="btn btn-secondary">Mag-Upload ng Media</a>
+                <a href="#recipes" class="btn btn-primary">Discover Recipes</a>
+                <a href="upload.php" class="btn btn-secondary">Upload Media</a>
             </div>
         </div>
 
@@ -42,8 +42,8 @@ if (file_exists($json_file)) {
 <section class="section" id="recipes" style="background-color: var(--bg-light);" aria-labelledby="featured-recipes-heading">
     <div class="container">
         <div class="section-header">
-            <h2 id="featured-recipes-heading">Mga Pambansang Paborito (Featured Filipino Dishes)</h2>
-            <p>Subukan ang aming mga subok at paboritong resape para sa pamilyang Pilipino.</p>
+            <h2 id="featured-recipes-heading">National Favorites (Featured Filipino Dishes)</h2>
+            <p>Try our tried-and-tested recipe favorites for the whole family.</p>
         </div>
 
         <div class="recipe-grid">
@@ -51,10 +51,10 @@ if (file_exists($json_file)) {
             <article class="recipe-card">
                 <img src="images/filipino-adobo.jpg" alt="Authentic Filipino Chicken and Pork Adobo garnished with garlic chips and bay leaves in a brown savory sauce" class="recipe-card-img" loading="lazy" width="400" height="220">
                 <div class="recipe-card-body">
-                    <span class="badge" style="align-self: flex-start;">Pambansang Ulam</span>
+                    <span class="badge" style="align-self: flex-start;">National Dish</span>
                     <h3 class="recipe-card-title">Classic Chicken & Pork Adobo</h3>
-                    <p class="recipe-card-desc">Ang walang katulad na adobo ng pamilyang Pilipino. Naka-marinate sa toyo, suka, bawang, at dahon ng laurel.</p>
-                    <a href="gallery.php" class="btn btn-secondary" style="margin-top: auto;">Tingnan sa Gallery &rarr;</a>
+                    <p class="recipe-card-desc">The quintessential Filipino family adobo. Marinated in soy sauce, vinegar, garlic, and bay leaves.</p>
+                    <a href="gallery.php" class="btn btn-secondary" style="margin-top: auto;">View in Gallery &rarr;</a>
                 </div>
             </article>
 
@@ -62,10 +62,10 @@ if (file_exists($json_file)) {
             <article class="recipe-card">
                 <img src="images/sinigang-baboy.jpg" alt="Traditional Filipino Sinigang na Baboy tamarind soup with kangkong water spinach, radish, and tomatoes" class="recipe-card-img" loading="lazy" width="400" height="220">
                 <div class="recipe-card-body">
-                    <span class="badge" style="align-self: flex-start;">Mainit na Sabaw</span>
-                    <h3 class="recipe-card-title">Sinigang na Baboy sa Sampalok</h3>
-                    <p class="recipe-card-desc">Mainit at maasim na sabaw ng pork belly na may sariwang kangkong, labanos, kamatis, at siling haba.</p>
-                    <a href="gallery.php" class="btn btn-secondary" style="margin-top: auto;">Tingnan sa Gallery &rarr;</a>
+                    <span class="badge" style="align-self: flex-start;">Savory Soup</span>
+                    <h3 class="recipe-card-title">Tamarind Pork Sinigang (Sinigang na Baboy)</h3>
+                    <p class="recipe-card-desc">Warm and sour pork belly soup with fresh water spinach, radish, tomatoes, and green chili.</p>
+                    <a href="gallery.php" class="btn btn-secondary" style="margin-top: auto;">View in Gallery &rarr;</a>
                 </div>
             </article>
 
@@ -73,10 +73,10 @@ if (file_exists($json_file)) {
             <article class="recipe-card">
                 <img src="images/halo-halo.jpg" alt="Tall glass of colorful Filipino Halo-Halo shaved ice dessert topped with ube halaya ice cream and leche flan" class="recipe-card-img" loading="lazy" width="400" height="220">
                 <div class="recipe-card-body">
-                    <span class="badge" style="align-self: flex-start;">Panghimagas (Dessert)</span>
+                    <span class="badge" style="align-self: flex-start;">Dessert</span>
                     <h3 class="recipe-card-title">Special Filipino Halo-Halo</h3>
-                    <p class="recipe-card-desc">Masarap na shaved ice na may halayang ube, leche flan, saging na saba, macapuno, at pinipig.</p>
-                    <a href="gallery.php" class="btn btn-secondary" style="margin-top: auto;">Tingnan sa Gallery &rarr;</a>
+                    <p class="recipe-card-desc">Delicious shaved ice topped with purple yam (ube halaya), leche flan, sweet banana, macapuno, and toasted rice.</p>
+                    <a href="gallery.php" class="btn btn-secondary" style="margin-top: auto;">View in Gallery &rarr;</a>
                 </div>
             </article>
         </div>
@@ -88,8 +88,8 @@ if (file_exists($json_file)) {
 <section class="section" style="background-color: #ffffff;" aria-labelledby="community-media-heading">
     <div class="container">
         <div class="section-header">
-            <h2 id="community-media-heading">In-Upload na Mga Resape & Media (User Submissions)</h2>
-            <p>Tingnan ang mga bagong ini-upload na larawan, pamagat, at deskripsyon ng mga manonood.</p>
+            <h2 id="community-media-heading">User Uploaded Recipes & Media</h2>
+            <p>View recently uploaded photos, titles, and descriptions submitted by users.</p>
         </div>
 
         <div class="recipe-grid">
@@ -120,14 +120,14 @@ if (file_exists($json_file)) {
                         </span>
                         <h3 class="recipe-card-title"><?php echo htmlspecialchars($item['title']); ?></h3>
                         <p class="recipe-card-desc">
-                            <?php echo !empty($item['description']) ? htmlspecialchars($item['description']) : 'Walang karagdagang deskripsyon.'; ?>
+                            <?php echo !empty($item['description']) ? htmlspecialchars($item['description']) : 'No additional description provided.'; ?>
                         </p>
                         
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
                             <small style="color: var(--text-muted);">
                                 📅 <?php echo date('M d, Y', strtotime($item['upload_date'])); ?>
                             </small>
-                            <a href="gallery.php" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">Pamahalaan sa Gallery &rarr;</a>
+                            <a href="gallery.php" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">Manage in Gallery &rarr;</a>
                         </div>
                     </div>
                 </article>
@@ -140,13 +140,13 @@ if (file_exists($json_file)) {
 <!-- Call to Action for Media Management -->
 <section class="section" style="background-color: var(--primary-light);">
     <div class="container" style="text-align: center; max-width: 800px;">
-        <h2 style="color: var(--primary);">Mag-Upload at Mamahala ng Sariling Media</h2>
+        <h2 style="color: var(--primary);">Upload & Manage Your Own Media</h2>
         <p style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 2rem;">
-            Maaari kang mag-upload ng iyong sariling mga kuha ng pagkaing Pilipino, isulat ang pamagat at deskripsyon, at mamahala sa Media Gallery!
+            You can upload your own photos of Filipino dishes, write titles and descriptions, and manage them in the Media Gallery!
         </p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="upload.php" class="btn btn-primary">Pumunta sa Upload Page &rarr;</a>
-            <a href="gallery.php" class="btn btn-secondary">Buksan ang Media Gallery &rarr;</a>
+            <a href="upload.php" class="btn btn-primary">Go to Upload Page &rarr;</a>
+            <a href="gallery.php" class="btn btn-secondary">Open Media Gallery &rarr;</a>
         </div>
     </div>
 </section>

@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_FILES['mediaFile']) || $_FILES['mediaFile']['error'] === UPLOAD_ERR_NO_FILE) {
         $_SESSION['upload_status'] = [
             'type' => 'danger',
-            'message' => 'Mangyaring pumili ng media file na iu-upload.'
+            'message' => 'Please select a media file to upload.'
         ];
         header('Location: ../upload.php');
         exit;
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($file['error'] !== UPLOAD_ERR_OK) {
         $_SESSION['upload_status'] = [
             'type' => 'danger',
-            'message' => 'Nagkaroon ng error sa pag-upload. Error code: ' . $file['error']
+            'message' => 'An error occurred during upload. Error code: ' . $file['error']
         ];
         header('Location: ../upload.php');
         exit;
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($file['size'] > $max_file_size) {
         $_SESSION['upload_status'] = [
             'type' => 'danger',
-            'message' => 'Ang laki ng file ay lumampas sa pinapayagang limitasyon (25 MB).'
+            'message' => 'The file size exceeds the maximum allowed limit (25 MB).'
         ];
         header('Location: ../upload.php');
         exit;
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!array_key_exists($ext, $allowed_types)) {
         $_SESSION['upload_status'] = [
             'type' => 'danger',
-            'message' => 'Hindi pinapayagang file extension (.' . htmlspecialchars($ext) . '). Images, audio, at video files lamang ang pwede.'
+            'message' => 'File extension not allowed (.' . htmlspecialchars($ext) . '). Only images, audio, and video files are permitted.'
         ];
         header('Location: ../upload.php');
         exit;
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $_SESSION['upload_status'] = [
             'type' => 'danger',
-            'message' => 'Hindi valid na MIME type (' . htmlspecialchars($mime_type) . ').'
+            'message' => 'Invalid MIME type (' . htmlspecialchars($mime_type) . ').'
         ];
         header('Location: ../upload.php');
         exit;
@@ -133,12 +133,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $_SESSION['upload_status'] = [
             'type' => 'success',
-            'message' => 'Tagumpay! Ang media file na "' . htmlspecialchars(!empty($title) ? $title : $final_filename) . '" ay na-upload at lalabas na sa Home page at Media Gallery.'
+            'message' => 'Success! The media file "' . htmlspecialchars(!empty($title) ? $title : $final_filename) . '" was uploaded and is now displayed on the Home page and Media Gallery.'
         ];
     } else {
         $_SESSION['upload_status'] = [
             'type' => 'danger',
-            'message' => 'Bumagsak ang pag-save ng uploaded file sa server storage.'
+            'message' => 'Failed to save uploaded file to server storage.'
         ];
     }
 

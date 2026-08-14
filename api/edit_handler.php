@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['filepath']) || empty($_POST['filepath'])) {
         $_SESSION['gallery_status'] = [
             'type' => 'danger',
-            'message' => 'Walang media file na tinukoy para i-edit.'
+            'message' => 'No media file specified for editing.'
         ];
         header('Location: ../gallery.php');
         exit;
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($new_title)) {
         $_SESSION['gallery_status'] = [
             'type' => 'danger',
-            'message' => 'Ang pamagat (Title) ay hindi pwedeng ibukod.'
+            'message' => 'The Media Title cannot be empty.'
         ];
         header('Location: ' . $redirect);
         exit;
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $_SESSION['gallery_status'] = [
         'type' => 'success',
-        'message' => 'Tagumpay! Bagong na-update ang pamagat at deskripsyon ng "' . htmlspecialchars($new_title) . '".'
+        'message' => 'Success! Successfully updated title and description for "' . htmlspecialchars($new_title) . '".'
     ];
 
     header('Location: ' . $redirect);

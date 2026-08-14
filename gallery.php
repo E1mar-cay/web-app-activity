@@ -87,7 +87,7 @@ $media_items = getMediaItems();
     <div class="container">
         <div class="section-header">
             <h1 id="gallery-heading">Media Gallery & Management</h1>
-            <p>Tingnan ang aming mga larawan, i-edit ang pamagat at deskripsyon, at mamahala o burahin ang mga media file.</p>
+            <p>View our media collection, edit titles and descriptions, and manage or delete media files.</p>
         </div>
 
         <!-- Status Message Alert -->
@@ -113,8 +113,8 @@ $media_items = getMediaItems();
         <div class="gallery-grid" id="galleryGrid">
             <?php if (empty($media_items)): ?>
                 <div style="grid-column: 1/-1; text-align: center; padding: 3rem; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-color);">
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1rem;">Walang nakitang media files sa gallery.</p>
-                    <a href="upload.php" class="btn btn-primary">Mag-Upload ng Bagong Media &rarr;</a>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1rem;">No media files found in the gallery.</p>
+                    <a href="upload.php" class="btn btn-primary">Upload New Media &rarr;</a>
                 </div>
             <?php else: ?>
                 <?php foreach ($media_items as $item): ?>
@@ -177,7 +177,7 @@ $media_items = getMediaItems();
                                     </button>
 
                                     <!-- Delete Button -->
-                                    <form action="api/delete_handler.php" method="POST" onsubmit="return confirm('Sigurado ka bang gusto mong burahin ang file na \'<?php echo htmlspecialchars(addslashes($item['name'])); ?>\'?');">
+                                    <form action="api/delete_handler.php" method="POST" onsubmit="return confirm('Are you sure you want to delete the file \'<?php echo htmlspecialchars(addslashes($item['name'])); ?>\'?');">
                                         <input type="hidden" name="filepath" value="<?php echo htmlspecialchars($item['path']); ?>">
                                         <button type="submit" class="btn btn-danger" style="padding: 0.4rem 0.75rem; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.35rem;" aria-label="Delete <?php echo htmlspecialchars($item['name']); ?>">
                                             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -201,25 +201,25 @@ $media_items = getMediaItems();
     <div style="background: #ffffff; width: 100%; max-width: 550px; border-radius: var(--border-radius); padding: 2rem; box-shadow: var(--shadow-lg); position: relative;">
         <button type="button" id="closeEditModal" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);">&times;</button>
 
-        <h2 style="font-size: 1.4rem; color: var(--secondary); margin-bottom: 1rem;">I-Edit ang Media Details</h2>
+        <h2 style="font-size: 1.4rem; color: var(--secondary); margin-bottom: 1rem;">Edit Media Details</h2>
         
         <form action="api/edit_handler.php" method="POST">
             <input type="hidden" id="editFilepath" name="filepath" value="">
             <input type="hidden" name="redirect" value="../gallery.php">
 
             <div class="form-group">
-                <label for="editMediaTitle" class="form-label">Pamagat (Media Title): *</label>
+                <label for="editMediaTitle" class="form-label">Media Title: *</label>
                 <input type="text" id="editMediaTitle" name="mediaTitle" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label for="editMediaDescription" class="form-label">Deskripsyon (Media Description):</label>
+                <label for="editMediaDescription" class="form-label">Media Description:</label>
                 <textarea id="editMediaDescription" name="mediaDescription" class="form-control" rows="4"></textarea>
             </div>
 
             <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.5rem;">
-                <button type="button" class="btn btn-secondary" id="cancelEditBtn">Kanselahin</button>
-                <button type="submit" class="btn btn-primary">I-Save ang Bagong Impormasyon</button>
+                <button type="button" class="btn btn-secondary" id="cancelEditBtn">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
             </div>
         </form>
     </div>
