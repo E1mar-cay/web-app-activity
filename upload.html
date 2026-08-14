@@ -90,6 +90,20 @@
         </section>
     </main>
 
+    <!-- Upload Loading Spinner Modal Overlay -->
+    <div id="loadingOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: 9999; flex-direction: column; align-items: center; justify-content: center; color: #ffffff; text-align: center; padding: 1rem;">
+        <div class="spinner" style="width: 60px; height: 60px; border: 6px solid rgba(255, 255, 255, 0.3); border-top: 6px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 1.5rem;"></div>
+        <h2 style="color: #ffffff; font-size: 1.6rem; margin-bottom: 0.5rem;">Uploading your Media File...</h2>
+        <p style="color: #e5dec9; font-size: 1.05rem;">Please wait while the system processes your image, video, or audio file.</p>
+    </div>
+
+    <style>
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    </style>
+
     <footer class="footer" role="contentinfo">
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -133,11 +147,90 @@
     document.addEventListener('DOMContentLoaded', () => {
         const fileInput = document.getElementById('mediaFile');
         const fileNameDisplay = document.getElementById('selectedFileName');
+        const uploadForm = document.getElementById('uploadForm');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+
         if (fileInput && fileNameDisplay) {
             fileInput.addEventListener('change', () => {
                 if (fileInput.files.length > 0) {
                     fileNameDisplay.innerHTML = '📁 Selected File: <strong>' + fileInput.files[0].name + '</strong>';
                 }
+            });
+        }
+
+        if (uploadForm) {
+            uploadForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (loadingOverlay) loadingOverlay.style.display = 'flex';
+
+                const title = document.getElementById('mediaTitle').value.trim();
+                const description = document.getElementById('mediaDescription').value.trim();
+                const file = fileInput ? fileInput.files[0] : null;
+
+                if (!file) {
+                    if (loadingOverlay) loadingOverlay.style.display = 'none';
+                    return;
+                }
+
+                let category = 'image';
+                if (file.type.startsWith('audio/') || /\.(mp3|ogg|wav)$/i.test(file.name)) {
+                    category = 'audio';
+                } else if (file.type.startsWith('video/') || /\.(mp4|webm)$/i.test(file.name)) {
+                    category = 'video';
+                }
+
+                const processClientUpload = () => {
+                    const reader = new FileReader();
+                    reader.onload = function(evt) {
+                        const dataUrl = evt.target.result;
+                        const newMedia = {
+                            id: 'upload_' + Date.now(),
+                            name: file.name,
+                            title: title || file.name,
+                            description: description,
+                            path: dataUrl,
+                            type: category,
+                            is_upload: true,
+                            upload_date: new Date().toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })
+                        };
+
+                        const existingUploads = JSON.parse(localStorage.getItem('savoria_custom_uploads') || '[]');
+                        existingUploads.unshift(newMedia);
+                        try {
+                            localStorage.setItem('savoria_custom_uploads', JSON.stringify(existingUploads));
+                        } catch (err) {
+                            console.warn('LocalStorage limit reached for media dataUrl:', err);
+                        }
+
+                        sessionStorage.setItem('gallery_status', JSON.stringify({
+                            type: 'success',
+                            message: `Success! '${title || file.name}' has been uploaded to the media gallery.`
+                        }));
+
+                        window.location.href = 'gallery.html';
+                    };
+                    reader.onerror = function() {
+                        if (loadingOverlay) loadingOverlay.style.display = 'none';
+                        alert('Error reading the selected media file.');
+                    };
+                    reader.readAsDataURL(file);
+                };
+
+                const formData = new FormData(uploadForm);
+                fetch('api/upload_handler.php', {
+                    method: 'POST',
+                    body: formData
+                }).then(response => {
+                    if (response.ok && response.redirected) {
+                        window.location.href = response.url;
+                    } else if (response.ok) {
+                        window.location.href = 'gallery.html?status=success';
+                    } else {
+                        processClientUpload();
+                    }
+                }).catch(() => {
+                    processClientUpload();
+                });
             });
         }
     });
